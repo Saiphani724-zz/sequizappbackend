@@ -465,7 +465,8 @@ app.get('/getUser', function (req, res) {
 })
 
 app.get('/', function (req, res) {
-	console.log('Server started on port 5000');
+	console.log('Server started on port 5jbjbj');
+	res.send("<h1>HELLOWORLD</h1>");
 })
 
 
