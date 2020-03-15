@@ -1,6 +1,6 @@
 var request = require("request");
 var ipaddress = "172.28.1.3"
-
+var assert = require('assert')
 describe("Login", function () {
 	describe("Testing with", function () {
 
@@ -12,7 +12,8 @@ describe("Login", function () {
 
 			request.get(base_url, function (error, response, body) {
 				//console.log(response);
-				expect(JSON.parse(response.body)["userFound"]).toBe(true);
+				var resp = JSON.parse(response.body)["userFound"]
+				assert.equal(resp,true);
 				done();
 			});
 		});
@@ -24,7 +25,8 @@ describe("Login", function () {
 			console.log(base_url);
 
 			request.get(base_url, function (error, response, body) {
-				expect(JSON.parse(response.body)["userFound"]).toBe(false);
+				var resp = JSON.parse(response.body)["userFound"]
+				assert.equal(resp,false);
 				done();
 			});
 		});
@@ -37,7 +39,9 @@ describe("Login", function () {
 
 			request.get(base_url, function (error, response, body) {
 				console.log(response.body)
-				expect(JSON.parse(response.body)["userFound"]).toBe(false);
+				//expect(JSON.parse(response.body)["userFound"]).toBe(false);
+				var resp = JSON.parse(response.body)["userFound"]
+				assert.equal(resp,false);
 				done();
 			});
 		});
@@ -51,6 +55,8 @@ describe("Login", function () {
 
 			request.get(base_url, function (error, response, body) {
 				expect(JSON.parse(response.body)["userFound"]).toBe(true);
+				var resp = JSON.parse(response.body)["userFound"]
+				assert.equal(resp,true);
 				done();
 			});
 		});

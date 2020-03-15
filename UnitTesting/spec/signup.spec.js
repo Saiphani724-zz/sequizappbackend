@@ -2,6 +2,7 @@
 
 var request = require("request");
 var ipaddress = "172.28.1.3"
+var assert = require('assert')
 
 describe("Sign Up", function () {
 	describe("Testing", function () {
@@ -17,7 +18,9 @@ describe("Sign Up", function () {
 			console.log(base_url);
 
 			request.get(base_url, function (error, response, body) {
-				expect(JSON.parse(response.body)["isRegisterSuccess"]).toBe(false);
+				//expect(JSON.parse(response.body)["isRegisterSuccess"]).toBe(false);
+				var resp = JSON.parse(response.body)["isRegisterSuccess"]
+				assert.equal(resp,false);
 				done();
 			});
 		});
@@ -34,7 +37,9 @@ describe("Sign Up", function () {
 			console.log(base_url);
 
 			request.get(base_url, function (error, response, body) {
-				expect(JSON.parse(response.body)["isRegisterSuccess"]).toBe(true);
+				//expect(JSON.parse(response.body)["isRegisterSuccess"]).toBe(true);
+				var resp = JSON.parse(response.body)["isRegisterSuccess"]
+				assert.equal(resp,true);
 				done();
 			});
 		});
@@ -51,7 +56,9 @@ describe("Sign Up", function () {
 			console.log(base_url);
 
 			request.get(base_url, function (error, response, body) {
-				expect(JSON.parse(response.body)["isRegisterSuccess"]).toBe(false);
+				//expect(JSON.parse(response.body)["isRegisterSuccess"]).toBe(false);
+				var resp = JSON.parse(response.body)["isRegisterSuccess"]
+				assert.equal(resp,false);
 				done();
 			});
 		});
@@ -69,6 +76,8 @@ describe("Sign Up", function () {
 
 			request.get(base_url, function (error, response, body) {
 				expect(JSON.parse(response.body)["isRegisterSuccess"]).toBe(true);
+				var resp = JSON.parse(response.body)["isRegisterSuccess"]
+				assert.equal(resp,true);
 				done();
 			});
 		});
