@@ -7,7 +7,7 @@ const port = process.env.PORT || 5000;
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 const MongoClient = require('mongodb').MongoClient;
-
+dbName = 'QuizAppDB';
 // var ipaddress1 = "127.0.0.1"
 // var ipaddress2 = "192.168.99.100"
 // var ipaddress3 = "172.28.1.4"
