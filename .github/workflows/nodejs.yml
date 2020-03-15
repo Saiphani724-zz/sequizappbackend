@@ -14,7 +14,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [12.x]
+        node-version: [ 10.x ]
     steps:
     - uses: actions/checkout@v1
     - name: Use Node.js ${{ matrix.node-version }}
@@ -22,9 +22,15 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     - name: npm install
-      run: npm install
+      run: |
+        npm install
+        
     - name: test
-      run: cd UnitTesting && jasmine
+      run: |
+        npm install jasmine
+        cd UnitTesting
+        echo $PWD
+        jasmine
     - name: deploy 
       if: github.ref == 'refs/heads/master' && job.status == 'success'
       run: |
