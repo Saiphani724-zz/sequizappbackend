@@ -24,7 +24,9 @@ jobs:
     - name: npm install
       run: npm install
     - name: test
-      run: cd UnitTesting && jasmine
+      run: |
+        cd UnitTesting
+        jasmine
     - name: deploy 
       if: github.ref == 'refs/heads/master' && job.status == 'success'
       run: |
