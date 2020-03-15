@@ -8,10 +8,11 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 const MongoClient = require('mongodb').MongoClient;
 
-var ipaddress1 = "127.0.0.1"
-var ipaddress2 = "192.168.99.100"
-var ipaddress3 = "172.28.1.4"
-const url = `mongodb://${ipaddress1}:27017`;dbName = 'QuizAppDB'
+// var ipaddress1 = "127.0.0.1"
+// var ipaddress2 = "192.168.99.100"
+// var ipaddress3 = "172.28.1.4"
+// const url = `mongodb://${ipaddress1}:27017`;dbName = 'QuizAppDB'
+const url = "mongodb+srv://sachmo:sachmoadi1-@secluster-7ftyi.mongodb.net/test?retryWrites=true&w=majority";
 
 app.use(cors());
 
