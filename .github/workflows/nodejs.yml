@@ -27,7 +27,7 @@ jobs:
         
     - name: test
       run: |
-        npm install jasmine-node
+        npm install jasmine-node -g
         cd UnitTesting
         echo $PWD
         jasmine-node spec/
