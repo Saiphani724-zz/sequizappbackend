@@ -24,10 +24,12 @@ jobs:
     - name: npm install
       run: |
         npm install
-        npm install jasmine
+        
     - name: test
       run: |
+        npm install jasmine
         cd UnitTesting
+        echo $PWD
         jasmine
     - name: deploy 
       if: github.ref == 'refs/heads/master' && job.status == 'success'
